@@ -3,13 +3,14 @@
   <entry>
     <title>About This Blog</title>
     <url>/Wei-s-Blog/About-This-Blog/</url>
-    <content><![CDATA[<p>大家好! 歡迎來到我的個人網站!<br>這個部落格是我作為一位大學生所分享的學習心得和最新資訊的地方。<br>我將會在這裡分享關於:</p>
+    <content><![CDATA[<p>Hello everyone! Welcome to my personal website!<br>This blog is where I, as a university student, share learning experiences and the latest updates.<br>Here, I’ll be sharing about:</p>
 <ul>
-<li>Data Structure &#x2F; Algorithm</li>
-<li>Machine Learning (ML) &#x2F; Deep Learning (DL)</li>
+<li>Data Structure / Algorithm</li>
+<li>Machine Learning (ML) / Deep Learning (DL)</li>
 <li>Natural Language Processing (NLP)</li>
 <li>other CS related topic</li>
 </ul>
+<hr>
 <p>Please checkout the <a href="/Wei-s-Blog/categories">Categories</a> for more informations!</p>
 ]]></content>
       <tags>
@@ -19,7 +20,8 @@
   <entry>
     <title>Data Structure &amp; Algorithm - Contents</title>
     <url>/Wei-s-Blog/Data-Structure&amp;Algorithm/contents/</url>
-    <content><![CDATA[<h4 id="Data-Structure-資料結構"><a href="#Data-Structure-資料結構" class="headerlink" title="- Data Structure 資料結構"></a>- Data Structure 資料結構</h4><ol>
+    <content><![CDATA[<p>This page aims to provide both a brief overview and an in-depth understanding of various data structures and algorithms. Data structures form a critical foundation in computer science, serving as tools to organize and manage data, essential for effectively solving a wide range of problems. Whereas algorithms provide systematic steps for problem-solving, leveraging the structured data by optimizing operations. Check them out!</p>
+<h4 id="Data-Structure-資料結構"><a href="#Data-Structure-資料結構" class="headerlink" title="- Data Structure 資料結構"></a>- Data Structure 資料結構</h4><ol>
 <li><a href="../stack" style="color: #2E86C1;">Stack - 堆疊</a><ul>
 <li>Monotonic Stack - 單調棧</li>
 </ul>
@@ -50,7 +52,44 @@
 <li>Segment Tree - 線段樹</li>
 <li>Fenwick Tree (BIT) - 樹狀數組</li>
 </ol>
-]]></content>
+<h4 id="Algorithm-演算法"><a href="#Algorithm-演算法" class="headerlink" title="- Algorithm 演算法"></a>- Algorithm 演算法</h4><ol>
+<li>Gerneral<ul>
+<li>Complexity - 複雜度</li>
+<li>Search - 搜尋</li>
+<li>Complete Search - 枚舉</li>
+<li>Divide &amp; Conquer - 分治</li>
+<li>Greedy - 貪心</li>
+<li>Dynamic Programming - 動態規劃</li>
+<li>Range Query - 區間查詢</li>
+</ul>
+</li>
+<li>Sorting</li>
+<li>Graph</li>
+<li>String</li>
+<li>Math</li>
+</ol>
+
+    <style>
+    #refplus, #refplus li{ 
+        padding:0;
+        margin:0;
+        list-style:none;
+    }；
+    </style>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+    document.querySelectorAll(".refplus-num").forEach((ref) => {
+        let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');
+        let refel = document.querySelector(refid);
+        let refnum = refel.dataset.num;
+        let ref_content = refel.innerText.replace(`[${refnum}]`,'');
+        tippy(ref, {
+            content: ref_content,
+        });
+    });
+    </script>
+    ]]></content>
       <categories>
         <category>Data Structure &amp; Algorithm</category>
       </categories>
@@ -61,7 +100,85 @@
   <entry>
     <title>Stack</title>
     <url>/Wei-s-Blog/Data-Structure&amp;Algorithm/stack/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="Stack"><a href="#Stack" class="headerlink" title="- Stack"></a>- Stack</h3><figure class="image-caption"><img lazyload="" src="/images/loading.svg" data-src="../../assets/stack.webp" alt="Stack<sup
+                ><a href='#ref-stack-img'>[1]</a></sup>"><figcaption>Stack<sup
+                ><a href='#ref-stack-img'>[1]</a></sup></figcaption></figure>
+
+<h4 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h4><ul>
+<li><strong>堆疊</strong> 或 <strong>棧</strong></li>
+<li>資料遵從 <strong>LIFO</strong> (Last-In-First-Out)「先進後出」的原則</li>
+<li>想像你正在放一疊書進去一個箱子，當你往這個箱子裡上放一本新書時，你只能放在最頂端。而要拿出一本書時也只能從最頂端拿，這個箱子就是 Stack</li>
+<li>可由 Array 或 Linked-List 實作</li>
+<li>支援3個操作</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time Complexty</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Peek()</td>
+<td><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z" /></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z" /></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" /></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" /></g></g></g></svg></mjx-container></td>
+<td>查看最頂端的元素</td>
+</tr>
+<tr>
+<td>Push()</td>
+<td><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z" /></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z" /></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" /></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" /></g></g></g></svg></mjx-container></td>
+<td>從最頂端新增一個元素</td>
+</tr>
+<tr>
+<td>Pop()</td>
+<td><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z" /></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z" /></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" /></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" /></g></g></g></svg></mjx-container></td>
+<td>從最頂端移除一個元素</td>
+</tr>
+</tbody></table>
+<h4 id="C-STL-std-stack"><a href="#C-STL-std-stack" class="headerlink" title="C++ STL - std::stack"></a>C++ STL - std::stack</h4><ul>
+<li>C++ 的 STL(Standard Library) 有提供現成的 <a class="link" href="https://en.cppreference.com/w/cpp/container/stack">std::stack <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><strong>Constructor</strong><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><figcaption><span>Stack(STL ver.)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// Default Constructor</span></span><br><span class="line">std::stack&lt;<span class="type">int</span>&gt; myStack; <span class="comment">// Creates an empty stack of integers</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Constructor with Container</span></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; myVector = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>};</span><br><span class="line">std::stack&lt;<span class="type">int</span>, std::vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">stackFromVector</span>(myVector); <span class="comment">// Creates a stack initialized with elements from the vector</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Copy Constructor</span></span><br><span class="line">std::stack&lt;<span class="type">int</span>&gt; originalStack = <span class="comment">/* ... */</span>;</span><br><span class="line"><span class="function">std::stack&lt;<span class="type">int</span>&gt; <span class="title">newStack</span><span class="params">(originalStack)</span></span>; <span class="comment">// Creates a copy of originalStack</span></span><br></pre></td></tr></table></figure></div></li>
+<li><strong>Operations</strong><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><figcaption><span>Stack(STL ver.)</span></figcaption><table><tr><td class="code"><pre><span class="line">std::stack&lt;<span class="type">int</span>&gt; myStack;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從最頂端新增一個元素</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">push</span>(<span class="number">1</span>) &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// Stack(from bottom to top): 1</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">push</span>(<span class="number">3</span>) &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// Stack(from bottom to top): 1 3</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">push</span>(<span class="number">5</span>) &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// Stack(from bottom to top): 1 3 5</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">push</span>(<span class="number">7</span>) &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// Stack(from bottom to top): 1 3 5 7</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">push</span>(<span class="number">9</span>) &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// Stack(from bottom to top): 1 3 5 7 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 從最頂端移除一個元素 (不會回傳元素)</span></span><br><span class="line">myStack.<span class="built_in">pop</span>()                         <span class="comment">// Stack(from bottom to top): 1 3 5 7</span></span><br><span class="line">myStack.<span class="built_in">pop</span>()                         <span class="comment">// Stack(from bottom to top): 1 3 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看最頂端的元素</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">top</span>() &lt;&lt; <span class="string">"\n"</span>;   <span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 查看stack的大小(元素數量)</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">size</span>() &lt;&lt; <span class="string">"\n"</span>;  <span class="comment">// 3</span></span><br><span class="line"><span class="comment">// 查看stack是否為空</span></span><br><span class="line">std::cout &lt;&lt; myStack.<span class="built_in">empty</span>() &lt;&lt; <span class="string">"\n"</span>; <span class="comment">// False</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h4 id="實作-Array-ver"><a href="#實作-Array-ver" class="headerlink" title="實作 - Array ver."></a>實作 - Array ver.</h4><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><figcaption><span>Stack(Array ver.)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>{</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> MAX_SIZE = <span class="number">100</span>;</span><br><span class="line">    <span class="type">int</span> arr[MAX_SIZE];</span><br><span class="line">    <span class="type">int</span> top;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 初始Stack是空的, top=-1</span></span><br><span class="line">    <span class="built_in">Stack</span>(){</span><br><span class="line">        top = <span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 判斷Stack是否是空的</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isEmpty</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> top == <span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 判斷Stack是否是滿的</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isFull</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> top == MAX_SIZE - <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 從最頂端新增一個元素</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> value)</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isFull</span>()){</span><br><span class="line">            <span class="keyword">return</span>; <span class="comment">// Stack is full</span></span><br><span class="line">        }</span><br><span class="line">        arr[++top] = value;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 從最頂端移除一個元素</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isEmpty</span>()){   </span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Stack is empty</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr[top--];</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 查看最頂端的元素</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">peek</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isEmpty</span>()){</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Stack is empty</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr[top];</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><figcaption><span>Stack(Array ver.) - Result</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    Stack stack;</span><br><span class="line"></span><br><span class="line">    stack.<span class="built_in">push</span>(<span class="number">5</span>); <span class="comment">// Push 5 onto the stack</span></span><br><span class="line">    stack.<span class="built_in">push</span>(<span class="number">10</span>); <span class="comment">// Push 10 onto the stack</span></span><br><span class="line">    stack.<span class="built_in">push</span>(<span class="number">15</span>); <span class="comment">// Push 15 onto the stack</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">"Top: "</span> &lt;&lt; stack.<span class="built_in">peek</span>() &lt;&lt; <span class="string">'\n'</span>; <span class="comment">// Output: Top: 15</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">"Pop: "</span> &lt;&lt; stack.<span class="built_in">pop</span>() &lt;&lt; <span class="string">'\n'</span>; <span class="comment">// Output: Pop: 15</span></span><br><span class="line">    cout &lt;&lt; <span class="string">"Pop: "</span> &lt;&lt; stack.<span class="built_in">pop</span>() &lt;&lt; <span class="string">'\n'</span>; <span class="comment">// Output: Pop: 10</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">"Is stack empty? "</span> &lt;&lt; (stack.<span class="built_in">isEmpty</span>() ? <span class="string">"Yes"</span> : <span class="string">"No"</span>) &lt;&lt; <span class="string">'\n'</span>; <span class="comment">// Output: Is stack empty? No</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="實作-Linked-List-ver"><a href="#實作-Linked-List-ver" class="headerlink" title="實作 - Linked-List ver."></a>實作 - Linked-List ver.</h4><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><figcaption><span>Stack(Linked-List ver.)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    Node* next;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> value){</span><br><span class="line">        data = value;</span><br><span class="line">        next = <span class="literal">nullptr</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>{</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Node* top;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 初始Stack是空的, top是nullptr</span></span><br><span class="line">    <span class="built_in">Stack</span>(){</span><br><span class="line">        top = <span class="literal">nullptr</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 判斷Stack是否是空的</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isEmpty</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> top == <span class="literal">nullptr</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 創立新的node, 指向原本的top, 後將top更新為此node</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> value)</span></span>{</span><br><span class="line">        Node* newNode = <span class="keyword">new</span> <span class="built_in">Node</span>(value);</span><br><span class="line">        newNode-&gt;next = top;</span><br><span class="line">        top = newNode;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 將top指向他的下面一個node(top-&gt;next), 並刪除原本的top</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isEmpty</span>()){</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        }</span><br><span class="line">        Node* temp = top;</span><br><span class="line">        <span class="type">int</span> poppedValue = temp-&gt;data;</span><br><span class="line">        top = top-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> temp;</span><br><span class="line">        <span class="keyword">return</span> poppedValue;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 查看最頂端的node</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">peek</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isEmpty</span>()){</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> top-&gt;data;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="相關演算法-Related-Algorithm"><a href="#相關演算法-Related-Algorithm" class="headerlink" title="相關演算法 Related Algorithm"></a>相關演算法 Related Algorithm</h4>
+  <div class="note p-4 mb-4 rounded-small blue icon-padding">
+    <i class="note-icon fa-solid fa-bolt"></i><p>Will be updated later…</p>
+
+  </div>
+
+<ul>
+<li>DFS</li>
+<li>Infix to Postfix</li>
+<li>Parentheses Matching</li>
+</ul>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ul id="refplus"><li id="ref-stack-img" data-num="1">[1]  <a class="link" href="https://cdn.programiz.com/sites/tutorial2program/files/stack.png">Stack Image <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li></ul>
+    <style>
+    #refplus, #refplus li{ 
+        padding:0;
+        margin:0;
+        list-style:none;
+    }；
+    </style>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+    document.querySelectorAll(".refplus-num").forEach((ref) => {
+        let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');
+        let refel = document.querySelector(refid);
+        let refnum = refel.dataset.num;
+        let ref_content = refel.innerText.replace(`[${refnum}]`,'');
+        tippy(ref, {
+            content: ref_content,
+        });
+    });
+    </script>
+    ]]></content>
       <categories>
         <category>Data Structure &amp; Algorithm</category>
       </categories>
