@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>About This Blog</title>
-    <url>/Wei-s-Blog/uncategorized/About-This-Blog/</url>
+    <url>/Wei-s-Blog/About-This-Blog/</url>
     <content><![CDATA[<p>大家好! 歡迎來到我的個人網站!<br>這個部落格是我作為一位大學生所分享的學習心得和最新資訊的地方。<br>我將會在這裡分享關於:</p>
 <ul>
 <li>Data Structure &#x2F; Algorithm</li>
@@ -15,5 +15,55 @@
       <tags>
         <tag>Info</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Data Structure &amp; Algorithm - Contents</title>
+    <url>/Wei-s-Blog/Data-Structure&amp;Algorithm/contents/</url>
+    <content><![CDATA[<h4 id="Data-Structure-資料結構"><a href="#Data-Structure-資料結構" class="headerlink" title="- Data Structure 資料結構"></a>- Data Structure 資料結構</h4><ol>
+<li><a href="../stack" style="color: #2E86C1;">Stack - 堆疊</a><ul>
+<li>Monotonic Stack - 單調棧</li>
+</ul>
+</li>
+<li>Queue - 佇列</li>
+<li>Deque - 雙向佇列<ul>
+<li>Monotonic Queue - 單調隊列</li>
+</ul>
+</li>
+<li>Linked List - 鏈結串列</li>
+<li>Tree - 樹<ul>
+<li>Binary Search Tree - 二元搜尋樹</li>
+<li>Balanced Binary Search Tree - 自平衡二元搜尋樹<ul>
+<li>Red-Black Tree - 紅黑樹</li>
+<li>B-Tree - B樹</li>
+<li>AVL Tree - AVL樹</li>
+<li>Splay Tree - 伸展樹</li>
+<li>Treap - 樹堆</li>
+</ul>
+</li>
+<li>Trie - 字典樹</li>
+<li>Huffman Tree - 霍夫曼樹</li>
+</ul>
+</li>
+<li>Heap - 堆積</li>
+<li>Disjoint Set - 並查集</li>
+<li>Sparse Table - 稀疏表</li>
+<li>Segment Tree - 線段樹</li>
+<li>Fenwick Tree (BIT) - 樹狀數組</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Data Structure &amp; Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Contents</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Stack</title>
+    <url>/Wei-s-Blog/Data-Structure&amp;Algorithm/stack/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Data Structure &amp; Algorithm</category>
+      </categories>
   </entry>
 </search>

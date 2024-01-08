@@ -972,7 +972,7 @@ button {
   line-height: 2rem;
 }
 .markdown-body ul {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 .markdown-body ul li {
   list-style: disc;
@@ -984,7 +984,7 @@ button {
   list-style: square;
 }
 .markdown-body ol {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 .markdown-body ol li {
   list-style: decimal;
