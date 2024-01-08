@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>About This Blog</title>
-    <url>/Wei-s-Blog/About-This-Blog/</url>
-    <content><![CDATA[<p>Hello everyone! Welcome to my personal website!<br>This blog is where I, as a university student, share learning experiences and the latest updates.<br>Here, I’ll be sharing about:</p>
-<ul>
-<li>Data Structure / Algorithm</li>
-<li>Machine Learning (ML) / Deep Learning (DL)</li>
-<li>Natural Language Processing (NLP)</li>
-<li>other CS related topic</li>
-</ul>
-<hr>
-<p>Please checkout the <a href="/Wei-s-Blog/categories">Categories</a> for more informations!</p>
-]]></content>
-      <tags>
-        <tag>Info</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Data Structure &amp; Algorithm - Contents</title>
     <url>/Wei-s-Blog/Data-Structure&amp;Algorithm/contents/</url>
     <content><![CDATA[<p>This page aims to provide both a brief overview and an in-depth understanding of various data structures and algorithms. Data structures form a critical foundation in computer science, serving as tools to organize and manage data, essential for effectively solving a wide range of problems. Whereas algorithms provide systematic steps for problem-solving, leveraging the structured data by optimizing operations. Check them out!</p>
@@ -95,6 +78,23 @@
       </categories>
       <tags>
         <tag>Contents</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About This Blog</title>
+    <url>/Wei-s-Blog/About-This-Blog/</url>
+    <content><![CDATA[<p>Hello everyone! Welcome to my personal website!<br>This blog is where I, as a university student, share learning experiences and the latest updates.<br>Here, I’ll be sharing about:</p>
+<ul>
+<li>Data Structure / Algorithm</li>
+<li>Machine Learning (ML) / Deep Learning (DL)</li>
+<li>Natural Language Processing (NLP)</li>
+<li>other CS related topic</li>
+</ul>
+<hr>
+<p>Please checkout the <a href="/Wei-s-Blog/categories">Categories</a> for more informations!</p>
+]]></content>
+      <tags>
+        <tag>Info</tag>
       </tags>
   </entry>
   <entry>
